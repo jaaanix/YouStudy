@@ -1,9 +1,11 @@
-<?php include "header.html"?>
+<?php include "header.tpl"; ?>
 <main>
 	<div class="col s12 m7">
 		<div class="card small">
 			<div class="card-image waves-effect waves-block waves-light">
-				<img class="activator" src="images/madmax.jpg">
+				<?php if ($loggedin) { ?>
+					<img class="activator" src="images/madmax.jpg">
+				<?php } ?>
 			</div>
 			<div class="card-content">
 				<span class="card-title activator grey-text text-darken-4">Mad Max<i class="mdi-navigation-more-vert right"></i></span>
@@ -16,4 +18,4 @@
 		</div>
 	</div>
 </main>
-<?php include "footer.html"?>
+<?php include "footer.tpl"; ?>
