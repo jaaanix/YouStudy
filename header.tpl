@@ -1,12 +1,26 @@
+<?php
+session_start();
+$loggedin = true;
+if (!isset($_SESSION['username']) || !isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false)
+	$loggedin = false;
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
+	<!-- Encoding -->
 	<meta charset="utf-8"/>
-	<!--Import materialize.css-->
-	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	<!--Import main.css-->
-	<link type="text/css" rel="stylesheet" href="css/main.css"  media="screen,projection"/>
-	<!--Let browser know website is optimized for mobile-->
+
+	<!-- Default Stlyesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<!-- Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	<!-- Jquery UI -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+	<!-- Responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,userscalable=no"/>
 </head>
 <body>

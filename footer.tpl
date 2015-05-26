@@ -16,13 +16,9 @@
 	</div>
 	<div class="footer-copyright">
 		<div class="container">
-			© 2015 <a href="https://www.youtube.com/watch?v=cd_sg7LQFEM">Alles nur geklaut</a>
 			<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
 		</div>
 	</div>
 </footer>
-<!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
