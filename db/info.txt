@@ -1,0 +1,3 @@
+Server: rdbms.strato.de
+Datenbank: DB2152898
+User: U2152898
