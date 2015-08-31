@@ -11,7 +11,13 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['loggedin']) || $_SESSION[
 	<meta charset="utf-8"/>
 
 	<!-- Default Stlyesheet -->
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="./css/style.css" />
+
+	<!-- Font Awesome -->
+	<link type="text/css" rel="stylesheet" href="./css/font-awesome.css" />
+
+	<!-- Ubuntu Font -->
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
 	<!-- Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -24,20 +30,21 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['loggedin']) || $_SESSION[
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,userscalable=no"/>
 </head>
 <body>
-	<nav class="light-blue lighten-1" role="navigation">
-		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">YouStudy</a>
+	<nav role="navigation">
+		<div class="container">
+			<a href="./index.php"><div class="logo"></div></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="#">
-					<i class="large mdi-navigation-apps"></i>
-				</a></li>
 				<li><a href="./parkplatz.php">
-					<i class="large mdi-maps-directions-car"></i>
+						<span>Parkplatz</span>
+						<i class="fa fa-car"></i>
 				</a></li>
 				<li><a href="./mensa.php">
-					<i class="large mdi-maps-local-restaurant"></i>
+						<span>Mensa</span>
+						<i class="fa fa-cutlery"></i>
 				</a></li>
 				<li><a href="./kino.php">
-					<i class="large mdi-action-theaters"></i>
+						<span>Campus-Kino</span>
+						<i class="fa fa-video-camera"></i>
 				</a></li>
 			</ul>
 			
@@ -47,3 +54,4 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['loggedin']) || $_SESSION[
 			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i	></a>
 		</div>
 	</nav>
+	<div class="container">
