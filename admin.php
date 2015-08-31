@@ -60,22 +60,35 @@ if(is_uploaded_file($_FILES['filename']['tmp_name'])){
 }	
 }
 
+// ID's
 $ids_stmt="SELECT id FROM movies";
 $ids_result=mysqli_query($verbindung, $ids_stmt) or die(mysqli_error());
-
-
 $ids_array = array();
 foreach ($ids_result as $row){
       $ids_array[] = $row;
 }
 //print_r(array_values($ids_array[3]));
 
-$selected_poster_id=$ids_array[2][id];
 
-$poster_stmt="SELECT * from movies WHERE id =" . $selected_poster_id;
-$sth = $verbindung->query($poster_stmt);
-$result=mysqli_fetch_array($sth);
-echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['poster'] ).'"/>';
+// Ausgewählter Film
+$selected_poster_id=$ids_array[2][id]; // TODO: ERSTER INDEX MUSS DURCH AUSGEWÄHLTES BILD ERSETZT WERDEN!
+$selected_poster_stmt="SELECT * from movies WHERE id =" . $selected_poster_id;
 
+// Anzeige ausgewähltes Poster zum Film
+$stmt1 = $verbindung->query($selected_poster_stmt);
+$result1=mysqli_fetch_array($stmt1);
+echo '<img src="data:image/jpeg;base64,'.base64_encode( $result1['poster'] ).'"/>';
+
+
+// Alle Poster
+$i = 0;
+$poster_stmt="SELECT poster from movies";
+$poster_result=mysqli_query($verbindung, $poster_stmt) or die(mysqli_error());
+$poster_array = array();
+foreach ($poster_result as $row) {
+	$poster_array[] = $row;
+	echo '<img src="data:image/jpeg;base64,'.base64_encode( $poster_array[$i]['poster'] ).'"/>';
+	$i++;
+}
 
 ?>
