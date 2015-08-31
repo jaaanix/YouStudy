@@ -6,7 +6,8 @@
 </form>
 </html>
 <?php
-$verbindung = mysqli_connect("localhost", "root" , "janis", "wpfmw") 
+include 'config.php' ;
+$verbindung = mysqli_connect(DB_ADDR,DB_USER,DB_PASS,DB_DATA)
 or die("Verbindung zur Datenbank konnte nicht hergestellt werden"); 
 
 if(isset($_POST['submit'])){

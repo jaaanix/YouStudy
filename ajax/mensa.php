@@ -26,13 +26,14 @@ $htmlregex = [
     "/<div[^>]*>/",
     "/<\/div>/",
     "/<br \/>/",
-    "/<br\/>/"];
+    "/<br\/>/",
+    "/<sup[^>]*>[^>]+>/"];
 $htmlreplace = preg_replace($htmlregex," ",$response);
 
-$subreplace = "/<sup[^>]*>/";
-$subendreplace ="/<\/sup>/";
-$htmlreplace = preg_replace($subreplace,"[sup]",$htmlreplace);
-$htmlreplace = preg_replace($subendreplace,"[supend]",$htmlreplace);
+#$subreplace = "/<sup[^>]*>[^>]+>/";
+#$subendreplace ="/<\/sup>/";
+#$htmlreplace = preg_replace($subreplace,"[sup]",$htmlreplace);
+#$htmlreplace = preg_replace($subendreplace,"[supend]",$htmlreplace);
 $htmlreplace = str_replace(["\n","\r","   ","  "], "", $htmlreplace);
 
 $titlesregex = "/<tr><td class='pk[^>]+>([^<]+)/";
