@@ -47,4 +47,4 @@
 	</div>
 	<div id="lightboxexit"><div class="icon"><i class="fa fa-times"></i></div><div class="text"> Ansicht schlie&szlig;en  </div></div>
 </div>
-<?php include "footer.tpl"; ?>
+<?php include "admin.php"; include "footer.tpl"; ?>
