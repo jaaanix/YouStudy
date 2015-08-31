@@ -4,9 +4,8 @@ session_start();
 ?> 
 
 <?php 
-$verbindung = mysqli_connect("rdbms.strato.de", "U2152898" , "diplom2015", "DB2152898")
+$verbindung = mysqli_connect("localhost", "root" , "janis", "wpfmw") 
 or die("Verbindung zur Datenbank konnte nicht hergestellt werden"); 
-//mysql_select_db("homepage") or die ("Datenbank konnte nicht ausgewählt werden"); 
 
 $username = $_POST["username"]; 
 $password = md5($_POST["password"]); 
@@ -18,11 +17,11 @@ $row = mysqli_fetch_object($ergebnis);
 if($row->password == $password) 
     { 
     $_SESSION["username"] = $username; 
-    echo "Login erfolgreich. <br> <a href=\"index.php\">Geschützer Bereich</a>"; 
+    echo "Login erfolgreich. <br> <a href=\"admin.php\">Admin Center</a>"; 
     } 
 else 
     { 
-    echo "Benutzername und/oder password waren falsch. <a href=\"login.html\">Login</a>"; 
+    echo "Benutzername und/oder Passwort falsch. <a href=\"login.html\">Login</a>"; 
     } 
 
 ?>
