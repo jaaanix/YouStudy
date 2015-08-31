@@ -30,7 +30,12 @@
 		</div>
 		<div class="col span_1_of_2">
 			<div>
-			<img src="imgages/parkplatz.jpg" >
+			<img src="images/parkplatz.jpg" height="360" width="640" >
+			</div>
+			<div class="deco-box park-text">
+				Öffnungszeiten der Schranke<br><br>
+				Montags- Freitags: 08:00 bis 10:00 geöffnet<br><br>
+				Montags- Freitags: 10:00 bis 20:00 MultiCa nötig<br><br>
 			</div>
 		</div>
 	</div>
