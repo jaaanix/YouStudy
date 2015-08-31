@@ -26,7 +26,7 @@ if(is_uploaded_file($_FILES['filename']['tmp_name'])){
 	  if($size<$maxsize){
 	    $filename=$_FILES['filename']['name'];	
 	    $imgData =addslashes (file_get_contents($_FILES['filename']['tmp_name']));
-	    $sql="INSERT INTO movies(name, poster) VALUES ('$filename','$imgData')";
+	    $sql="INSERT INTO movies(filename, poster) VALUES ('$filename','$imgData')";
 	    mysqli_query($verbindung, $sql) or die(mysqli_error());
 	  }else{
 	    echo "<font class='error'>Bild konnte nicht hochgeladen werden, da die Datei zu groß ist.</font>";
@@ -57,42 +57,24 @@ if(is_uploaded_file($_FILES['filename']['tmp_name'])){
 	  break;
   }		
 }	
- 
 }
 
-/*
-//List Images Part
-$sql='SELECT * from movies';
-$query=mysqli_query($sql) or die(mysqli_error);
-$listimage = "<fieldset>
-		<legend>List Images</legend>	
-	 ";
-$listimage.= "
-<table cellpadding='1' cellspacing='1' width='300' class='tablecss'>
-  <tr class='tablecss'>
-	<td nowrap class='label'>Image Name</td>
-	<td class='label'>Type</td>
-	<td class='label'>Size</td>
-  </tr>";
-$imageexist=false;
-while($result=mysqli_fetch_array($query)){
-  $imageexist=true;		  			
-  $listimage.= "
-  <tr class='whiterow'>
-	<td><a href='javascript:void(0)' onclick='ajaxrequest(\"".$result['id']."\")'>".$result['name']."</a></td>
-	<td>".str_replace('image/','',$result['type'])."</td>
-	<td nowrap>".$result['size']."</td>
-  </tr>";										
+$ids_stmt="SELECT id FROM movies";
+$ids_result=mysqli_query($verbindung, $ids_stmt) or die(mysqli_error());
+
+
+$ids_array = array();
+foreach ($ids_result as $row){
+      $ids_array[] = $row;
 }
- 
-$listimage.= "
-</table>
-</fieldset>";
- 
-if($imageexist){
-	echo $listimage;
-}
- 
-echo "<div id='imageframe'></div>";	
-*/				
+//print_r(array_values($ids_array[3]));
+
+$selected_poster_id=$ids_array[2][id];
+
+$poster_stmt="SELECT * from movies WHERE id =" . $selected_poster_id;
+$sth = $verbindung->query($poster_stmt);
+$result=mysqli_fetch_array($sth);
+echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['poster'] ).'"/>';
+
+
 ?>
