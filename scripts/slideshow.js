@@ -1,8 +1,3 @@
-$(function() {
-	var tmp = new imageGalery();
-	tmp.SetImages(["images/madmax.jpg"]);
-});
-
 function imageGalery() {
 	var that = this;
 	var images = [];

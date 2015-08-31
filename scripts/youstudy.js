@@ -26,6 +26,9 @@ function InitializePage() {
                 beilagen,
                 container = $('#mensa tbody');
             for (var i = 0; i < data.titles.length; i++) {
+
+
+
                 var item = $('<tr><td>' + data.titles[i] + '</td><td><img src="' + data.images[i] + '"></td><td>' + data.desc[i] + '</td><td>' + data.preise[i] + '</td></tr>')
                 if (data.titles[i].toLowerCase().indexOf("hinweis") > -1) {
                     hinweis = item;

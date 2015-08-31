@@ -1,6 +1,6 @@
 <html>
 <form enctype='multipart/form-data' name='frmupload' action='' method='POST'>
-<input type="hidden" name="MAX_FILE_SIZE" value="524288" />
+<input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
 <input name='filename' type='file'>
 <input type='submit' value='Upload' name='submit'>
 </form>
@@ -71,7 +71,7 @@ foreach ($ids_result as $row){
 
 
 // Ausgewählter Film
-$selected_poster_id=$ids_array[2][id]; // TODO: ERSTER INDEX MUSS DURCH AUSGEWÄHLTES BILD ERSETZT WERDEN!
+$selected_poster_id = $ids_array[2][id]; // TODO: ERSTER INDEX MUSS DURCH AUSGEWÄHLTES BILD ERSETZT WERDEN!
 $selected_poster_stmt="SELECT * from movies WHERE id =" . $selected_poster_id;
 
 // Anzeige ausgewähltes Poster zum Film
