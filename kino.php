@@ -1,7 +1,9 @@
 <?php include "header.tpl"; ?>
     <script type="text/javascript">
-        var tmp = new imageGalery();
-        tmp.SetImages(["images/kinox1.jpg", "images/kinox2.jpg", "images/kinox3.jpg", "images/kinox4.jpg"]);
+        $(function () {
+            var tmp = new imageGalery();
+            tmp.SetImages(["images/kino1.jpg", "images/kino2.jpg", "images/kino3.jpg", "images/kino4.jpg"]);
+        });
     </script>
     <div id="lightbox">
         <div id="lightboxupper">

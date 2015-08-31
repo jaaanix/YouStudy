@@ -9,8 +9,7 @@
                     <ul>
                         <li> 31.08.2015 <b>Die Seite ist Online!</b></li>
                         <li> 30.08.2015 <b>Wieder verwackelt:</b> Lebensmittelfotograf verzweifelt an Pudding</li>
-                        <li> 28.08.2015 <b>Glutenfreies Brot:</b> Feuerwehr löscht Brand in Bio-Bäckerei vollständig</b>
-                        </li>
+                        <li> 28.08.2015 <b>Glutenfreies Brot:</b> Feuerwehr löscht Brand in Bio-Bäckerei vollständig</b></li>
 
 
                     </ul>

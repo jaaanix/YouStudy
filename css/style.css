@@ -13,6 +13,10 @@ html {
     min-height: 100%;
 }
 
+table {
+    width: 100%;
+}
+
 body {
     position: absolute;
     font-family: 'Ubuntu', Arial, serif;
