@@ -9,24 +9,22 @@
     font-size: 27px;
        margin-top: 10px;
 }
-
 #light {
     background-color: #000;
     box-shadow: 0 0 5px rgba(0,0,0, .8);
     overflow: hidden;
     padding: 0 0 4px;
     width: 40px;
-    margin: 30px;
-    margin-top: 20px;
+    margin: 20px auto 0 auto;
 }
 
 #light span {
     border-radius: 50px;
     display: block;
     height: 30px;
+    width: 30px;
     margin: 4px auto 0;
     opacity: .10;
-    width: 30px;
 }
 
 /*! Light colours */
@@ -39,3 +37,16 @@
 #light #red.active    { box-shadow: 0 0 10px red; }
 #light #orange.active { box-shadow: 0 0 10px orange; }
 #light #green.active  { box-shadow: 0 0 10px green; }
+
+
+@media (min-width: 768px) {
+    #light { 
+        width: 80px;
+        padding: 0 0 8px;
+    }
+    #light span {
+        height: 60px;
+        width: 60px;
+        
+    }
+}

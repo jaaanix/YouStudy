@@ -17,11 +17,16 @@
                 </div>
                 <div class="box50">
                     <span class="caption">Parkplatzsituation</span>
-                    Freie Parkplätze: 23
-                    <div id="light">
-                        <span id="red"></span>
-                        <span class="active" id="orange"></span>
-                        <span id="green"></span>
+                    <div class="box66">
+                        <div class="caption noborder">Parkplätze frei: 165 </div>
+                        <div class="caption noborder">Parkplätze belegt: 54 </div>
+                    </div>
+                    <div class="box33">
+                        <div id="light">
+                            <span id="red"></span>
+                            <span class="active" id="orange"></span>
+                            <span id="green"></span>
+                        </div>
                     </div>
                 </div>
             </div>
