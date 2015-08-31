@@ -43,10 +43,6 @@ $currentpage = basename($_SERVER['PHP_SELF']);
     <script src="./scripts/slideshow.js"></script>
     <script src="./scripts/spin.min.js"></script>
 
-    <?php if ($currentpage == "parkplatz.php") { ?>
-    <link href="css/grids.css" rel="stylesheet">
-    <link href="css/lights.css" rel="stylesheet">
-    <?php } ?>
 </head>
 <body>
 <nav role="navigation">

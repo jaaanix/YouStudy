@@ -49,7 +49,7 @@ function InitializePage() {
             for (var i = 0; i < data.titles.length; i++) {
                 var random = Math.floor(Math.random() * 5) + 1;
                 var bewertung = "";
-                for (var j = 0; j <= random; j++) {
+                for (var j = 0; j < random; j++) {
                     bewertung += '<i class="fa fa-star"></i>';
                 }
                 var item = $('<tr><td>' + data.titles[i] + '</td><td><img src="' + data.images[i] + '"></td><td>' + data.desc[i] + '</td><td>' + data.preise[i] + '</td><td>' + bewertung + '</td></tr>')
@@ -71,7 +71,7 @@ function InitializePage() {
             for (var i = 0; i < data.titles.length; i++) {
                 var random = Math.floor(Math.random() * 5) + 1;
                 var bewertung = "";
-                for (var j = 0; j <= random; j++) {
+                for (var j = 0; j < random; j++) {
                     bewertung += '<i class="fa fa-star"></i>';
                 }
                 var item = $('<tr><td>' + data.titles[i] + '</td><td><img src="' + data.images[i] + '"></td><td>' + data.desc[i] + '</td><td>' + data.preise[i] + '</td><td>' + bewertung + '</td></tr>')

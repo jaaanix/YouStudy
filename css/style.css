@@ -105,35 +105,34 @@ nav .container {
     clear: both;
     overflow: hidden;
 }
+
 .text {
 }
+
 .text i {
     font-weight: bold;
     font-size: 1.75em;
 }
 
-.col { display: table; }
-.leftcol , .rightcol {
+.col {
+    display: table;
+}
+
+.leftcol, .rightcol {
     display: table-cell;
     vertical-align: middle;
     padding: 5px;
 }
+
 .red {
     color: #f67261;
 }
+
 .green {
     color: #29b6f6;
 }
 
-.box50 {
-    position: relative;
-    float: left;
-    width: 100%;
-    background: #FFFFFF;
-    padding: 15px;
-    margin: 0 1% 20px 1%;
-}
-.box100 {
+.box33, .box66, .box100, .box50 {
     position: relative;
     float: left;
     width: 100%;
@@ -142,7 +141,14 @@ nav .container {
     margin: 0 1% 20px 1%;
 }
 
- .caption {
+hr {
+    background: none;
+    border: none;
+    border-bottom: solid 2px #29b6f6;
+    margin: 40px 0;
+}
+
+.caption {
     display: block;
     padding: 5px 5px;
     margin: 0 0 5px 0;
@@ -150,6 +156,18 @@ nav .container {
     border-bottom: solid 2px #29b6f6;
 }
 
+.caption.noborder {
+    border: none;
+    margin: 25px 0 25px 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.onlybig {
+    display: none;
+}
 
 footer {
     position: absolute;
@@ -172,26 +190,42 @@ footer {
 
     .box50 {
         width: 48%;
-        margin: 0 1% 20px 1%;
+    }
+
+    .box33 {
+        width: 31%;
+    }
+
+    .box66 {
+        width: 64%;
+    }
+
+    .onlybig {
+        display: block;
+    }
+
+    .bigscreenspace {
+        height: 60px;
     }
 }
+
 @media (min-width: 1024px) {
     .container {
         width: 1000px;
     }
 }
+
 @media (min-width: 1280px) {
     .container {
         width: 1260px;
     }
 }
+
 @media (min-width: 1920px) {
     .container {
         width: 1900px;
     }
 }
-
-
 
 @media (max-width: 767px) {
     #mobilenavigation {
@@ -222,7 +256,7 @@ footer {
         left: 0;
         width: 100%;
         display: none;
-        z-index: 2;
+        z-index: 3;
     }
 
     nav ul.visible {

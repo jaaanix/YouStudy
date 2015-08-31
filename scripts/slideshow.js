@@ -175,14 +175,14 @@ function imageGalery() {
 		images = imgArr;
 		for (var i = 0; i < imgArr.length; i++) {
 			thumbTemplate.attr('data-index',i);
-			thumbImage.css( {'background-image': 'url(' + imgArr[i] + ')'} );
+			thumbImage.css( {'background-image': 'url(' + imgArr[i].replace('.jpg','_thumb.jpg') + ')'} );
 			var clone = thumbTemplate.clone();
 			lightboxrail.append(clone);
 			if (i == 0)
 				thumbwidth = clone.outerWidth();
 		}
 		if (thumbwidth * imgArr.length > lightboxlower.width()) {
-			lightboxrail.css("width", thumbwidth * imgArr.length + 100)
+			lightboxrail.css("width", thumbwidth * imgArr.length + 100);
 			lightboxrailwidth = lightboxlower.width() - 100;
 			lightboxrailmove = Math.min(5, parseInt(lightboxrailwidth / thumbwidth)) * thumbwidth;
 			lightboxrailright = lightboxrailwidth - lightboxrail.width(); 
