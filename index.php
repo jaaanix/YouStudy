@@ -23,9 +23,11 @@
 <div class="row">
     <div class="box50">
         <span class="caption">Mensa</span>
+        Heute in der Mensa:
     </div>
     <div class="box50">
         <span class="caption">Campus Kino</span>
+        Demnächst:
     </div>
 </div>
 </main>
