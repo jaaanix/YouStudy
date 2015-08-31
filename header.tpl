@@ -1,12 +1,13 @@
 <?php
 session_start();
 $loggedin = isset($_SESSION['username']);
+$currentpage = basename($_SERVER['PHP_SELF']);
 ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
 	<!-- Encoding -->
-	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 	<!-- Default Stlyesheet -->
 	<link type="text/css" rel="stylesheet" href="./css/style.css" />
@@ -28,6 +29,9 @@ $loggedin = isset($_SESSION['username']);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,userscalable=no"/>
 
 	<!-- Page Script -->
+	<script type="text/javascript">
+		var CURRENTPAGE = '<?php echo $currentpage?>';
+	</script>
 	<script src="./scripts/youstudy.js"></script>
 
 	<!-- Slideshow -->
