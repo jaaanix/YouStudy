@@ -28,6 +28,9 @@ $currentpage = basename($_SERVER['PHP_SELF']);
 	<!-- Responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,userscalable=no"/>
 
+	<!-- Ampel -->
+	<link href="css/lights.css" rel="stylesheet">
+
 	<!-- Page Script -->
 	<script type="text/javascript">
 		var CURRENTPAGE = '<?php echo $currentpage?>';
