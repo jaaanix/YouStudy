@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: text/html; charset=utf-8");
 
-$verbindung = mysqli_connect("localhost", "root", "", "wpfmw")
+$verbindung = mysqli_connect("localhost", "root", "janis", "wpfmw")
 or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
 
 //mysqli_select_db("DB2152898") or die ("Datenbank konnte nicht ausgewählt werden"); 

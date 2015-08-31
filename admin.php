@@ -38,10 +38,10 @@ if(is_uploaded_file($_FILES['filename']['tmp_name'])){
 }else{			
   switch($_FILES['filename']['error']){
 	case 0: //no error; possible file attack!
-	  echo "<font class='error'>Beim Upload ist ein Fehler aufgetreten.</font>";
+	  echo "<font class='error'>There was a problem with your upload.</font>";
 	  break;
 	case 1: //uploaded file exceeds the upload_max_filesize directive in php.ini
-	  echo "<font class='error'>Die Datei ist zu groß.</font>";
+	  echo "<font class='error'>The file you are trying to upload is too big.</font>";
 	  break;
 	case 2: //uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the html form
 	  echo "<font class='error'>The file you are trying to upload is too big.</font>";

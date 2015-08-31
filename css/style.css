@@ -1,126 +1,205 @@
-* { box-sizing: border-box; }
-a { text-decoration: inherit; color: inherit; }
-html { margin: 0; }
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+html {
+    margin: 0;
+}
+
 body {
-	font-family: 'Ubuntu', Arial, serif;
-	margin: 100px 0 0 0;
-	min-height: 100%;
-	font-size: 100%;
-	line-height: 100%;
-	background: url('../images/bg66.png') #F4F4F4;
+    font-family: 'Ubuntu', Arial, serif;
+    margin: 60px 0 0 0;
+    min-height: 100%;
+    font-size: 100%;
+    line-height: 100%;
+    background: url('../images/bg66.png') #F4F4F4;
 }
 
 nav {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 50px;
-	background: #29b6f6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: #29b6f6;
 }
+
 nav ul {
-	display:table;
-	float: left;
-	list-style: none;
-	padding: 0;
-	margin: 0;}
+    display: table;
+    float: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 nav ul li {
-	display: table-cell;
-	vertical-align: middle;
-	height: 50px;
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
 }
+
 nav ul li a {
-	display: table-cell;
-	vertical-align: middle;
-	height: 50px;
-	padding: 0 5px;
-	color: #FFFFFF;
-	font-size: 1.2em;
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    padding: 0 5px;
+    color: #FFFFFF;
+    font-size: 1.2em;
 }
 
+nav ul li a:hover {
+    background: #0996d6;
+}
 
-nav ul li a:hover { background: #0996d6; }
 nav a .logo {
-	float: left;
-	display: inline-block;
-	background: url('../images/logostretched.png') no-repeat;
-	background-size: contain;
-	height: 50px;
-	width: 200px;
+    float: left;
+    display: inline-block;
+    background: url('../images/logostretched.png') no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 200px;
 }
+
 nav a .logo:hover {
-	background-color: #0996d6;
+    background-color: #0996d6;
 }
 
 footer {
-	bottom: 0;
-	margin: 0;
-	position: absolute;
-	width: 100%;
+    bottom: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
 }
 
-nav .container { padding: 0;}
+nav .container {
+    padding: 0;
+}
+
 .container {
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-	position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
 }
 
 #mobilenavigation {
-	display: none;
+    display: none;
+}
+
+.row {
+    clear: both;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.box50 {
+    position: relative;
+    float: left;
+    width: 100%;
+    background: #FFFFFF;
+    padding: 15px;
+}
+
+.box50 .caption {
+    display: block;
+    padding: 5px 5px;
+    margin: 0 0 5px 0;
+    font-size: 1.5em;
+    border-bottom: solid 2px #29b6f6;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: #29b6f6;
 }
 
 @media (min-width: 768px) {
-	.container {
-		width: 750px;
-	}
-	nav ul li.right {
-		position: absolute;
-		right: 0;
-	}
+    .container {
+        width: 750px;
+    }
+
+    nav ul li.right {
+        position: absolute;
+        right: 0;
+    }
+
+    .box50 {
+        width: 48%;
+        margin: 0 1%;
+    }
 }
 @media (min-width: 1024px) {
-	.container {
-		width: 1000px;
-	}
+    .container {
+        width: 1000px;
+    }
 }
+@media (min-width: 1280px) {
+    .container {
+        width: 1260px;
+    }
+}
+@media (min-width: 1920px) {
+    .container {
+        width: 1900px;
+    }
+}
+
+
+
 @media (max-width: 767px) {
-	#mobilenavigation {
-		display: table;
-		position: absolute;
-		right: 0;
-		top: 0;
-		height: 50px;
-		width: 50px;
-		font-size: 2.2em;
-		color: #FFFFFF;
-		cursor: pointer;
-	}
-	#mobilenavigation:hover {
-		background: #0996d6;
-	}
-	#mobilenavigation i {
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-	}
-	nav ul {
-		position: absolute;
-		top: 50px;
-		left: 0;
-		width: 100%;
-		display: none;
-		z-index: 2;
-	}
-	nav ul.visible { display: block; }
-	nav ul li {
-		display: block;
-		background: #29b6f6;
-	}
-	nav ul li a {
-		display: block;
-		padding: 15px 10px;
-	}
+    #mobilenavigation {
+        display: table;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 50px;
+        width: 50px;
+        font-size: 2.2em;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+    #mobilenavigation:hover {
+        background: #0996d6;
+    }
+
+    #mobilenavigation i {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        display: none;
+        z-index: 2;
+    }
+
+    nav ul.visible {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        background: #29b6f6;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px 10px;
+    }
 }

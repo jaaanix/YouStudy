@@ -2,7 +2,7 @@
 <?php
 
 if (isset($_POST["username"]) && isset($_POST["password"])) {
-    $verbindung = mysqli_connect("localhost", "root", "", "wpfmw")
+    $verbindung = mysqli_connect("localhost", "root", "janis", "wpfmw")
     or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
 
     $username = $_POST["username"];
