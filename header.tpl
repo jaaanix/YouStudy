@@ -28,6 +28,11 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['loggedin']) || $_SESSION[
 
 	<!-- Responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,userscalable=no"/>
+
+	<!-- Slideshow -->
+	<link type="text/css" rel="stylesheet" href="./css/slideshow.css" />
+	<script src="./scripts/slideshow.js"></script>
+	<script src="./scripts/spin.min.js"></script>
 </head>
 <body>
 	<nav role="navigation">
