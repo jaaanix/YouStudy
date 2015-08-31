@@ -1,8 +1,6 @@
 <?php
 session_start();
-$loggedin = true;
-if (!isset($_SESSION['username']) || !isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false)
-	$loggedin = false;
+$loggedin = isset($_SESSION['username']);
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -40,23 +38,33 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['loggedin']) || $_SESSION[
 			<a href="./index.php"><div class="logo"></div></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="./parkplatz.php">
-						<span>Parkplatz</span>
-						<i class="fa fa-car"></i>
+					<span>Parkplatz</span>
+					<i class="fa fa-car"></i>
 				</a></li>
 				<li><a href="./mensa.php">
-						<span>Mensa</span>
-						<i class="fa fa-cutlery"></i>
+					<span>Mensa</span>
+					<i class="fa fa-cutlery"></i>
 				</a></li>
 				<li><a href="./kino.php">
-						<span>Campus-Kino</span>
-						<i class="fa fa-video-camera"></i>
+					<span>Campus-Kino</span>
+					<i class="fa fa-video-camera"></i>
 				</a></li>
+				<?php if ($loggedin == true) { ?>
+				<li><a href="./logout.php">
+					<span>Logout</span>
+					<i class="fa fa-sign-out"></i>
+				</a></li>
+				<?php } else { ?>
+				<li><a href="./login.php">
+					<span>Login</span>
+					<i class="fa fa-sign-out"></i>
+				</a></li>
+				<?php } ?>
 			</ul>
-			
 			<ul id="nav-mobile" class="side-nav" style="left: -250px;">
 				<li><a href="#"><i class="large mdi-navigation-apps"></i></a></li>
 			</ul>
-			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i	></a>
+			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 		</div>
 	</nav>
 	<div class="container">

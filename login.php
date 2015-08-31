@@ -1,27 +1,47 @@
-<?php 
-header("Content-Type: text/html; charset=utf-8");
-session_start(); 
-?> 
+<?php include 'header.tpl'; ?>
+<?php
 
-<?php 
-$verbindung = mysqli_connect("localhost", "root" , "janis", "wpfmw") 
-or die("Verbindung zur Datenbank konnte nicht hergestellt werden"); 
+if (isset($_POST["username"]) && isset($_POST["password"])) {
+    $verbindung = mysqli_connect("localhost", "root", "", "wpfmw")
+    or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
 
-$username = $_POST["username"]; 
-$password = md5($_POST["password"]); 
+    $username = $_POST["username"];
+    $password = md5($_POST["password"]);
 
-$abfrage = "SELECT username, password FROM users WHERE username LIKE '$username' LIMIT 1"; 
-$ergebnis = mysqli_query($verbindung, $abfrage); 
-$row = mysqli_fetch_object($ergebnis); 
+    $abfrage = "SELECT username, password FROM users WHERE username LIKE '$username' LIMIT 1";
+    $ergebnis = mysqli_query($verbindung, $abfrage);
+    $row = mysqli_fetch_row($ergebnis);
+    if (isset($row)) {
+        if ($row[1] == $password) {
+            $_SESSION["username"] = $username;
+            header("Location: index.php");
+        } else {
+            echo "Benutzername und/oder Passwort falsch. <a href=\"login.html\">Login</a>";
+        }
+    } else {
+        echo "Benutzername und/oder Passwort falsch. <a href=\"login.html\">Login</a>";
+    }
 
-if($row->password == $password) 
-    { 
-    $_SESSION["username"] = $username; 
-    echo "Login erfolgreich. <br> <a href=\"admin.php\">Admin Center</a>"; 
-    } 
-else 
-    { 
-    echo "Benutzername und/oder Passwort falsch. <a href=\"login.html\">Login</a>"; 
-    } 
+}
 
 ?>
+<?php if (!$loggedin) { ?>
+    <form action="login.php" method="post">
+        Username:<br>
+        <input type="text" size="24" maxlength="50"
+               name="username"><br><br>
+
+        Passwort:<br>
+        <input type="password" size="24" maxlength="50"
+               name="password"><br>
+
+        <input type="submit" value="Login">
+    </form>
+<?php } ?>
+
+
+
+<?php
+include 'footer.tpl';
+?>
+
