@@ -6,7 +6,6 @@ while (file_exists ("images/kino$round.jpg")) {
     $images[] = "\"images/kino{$round}.jpg\"";
     $round++;
 }
-        var_dump($images);
         ?>
         <script type="text/javascript">
             $(function () {

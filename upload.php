@@ -8,7 +8,6 @@ $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 $number = "";
 $round = 0;
 while (file_exists ($uploaddir . "kino" . ++$round . ".jpg"));
-var_dump($_FILES['userfile']) ;
 if ($_FILES['userfile']['error'] == 2)
     echo "Die ausgewählte Datei hat leider eine Größe, die von PHP nicht akzeptiert wird.";
 else {
@@ -20,8 +19,6 @@ else {
     } else {
         echo "Ein Fehler ist aufgetreten!\n";
     }
-
-    echo 'Weitere Debugging Informationen:';
     print "</pre>";
 }
 
