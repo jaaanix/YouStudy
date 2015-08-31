@@ -110,10 +110,10 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 
 --movies
-insert into movies(filename, poster) values("avengers2_poster.jpg", LOAD_FILE('/../images/avengers2_poster.jpg'));
-insert into movies(filename, poster) values("Fast&Furious7_poster.jpg", LOAD_FILE('/../images/Fast&Furious7_poster.jpg'));
-insert into movies(filename, poster) values("Interstellar_poster.jpg", LOAD_FILE('/../images/Interstellar_poster.jpg'));
-insert into movies(filename, poster) values("TheWolfofWallStreet_poster.jpg", LOAD_FILE('/../images/TheWolfofWallStreet_poster.jpg'));
+insert into movies(filename, poster) values("avengers2_poster.jpg", LOAD_FILE('/ENTER_FULL_PATH/YouStudy/images/avengers2_poster.jpg'));
+insert into movies(filename, poster) values("Fast&Furious7_poster.jpg", LOAD_FILE('/ENTER_FULL_PATH/YouStudy/images/Fast&Furious7_poster.jpg'));
+insert into movies(filename, poster) values("Interstellar_poster.jpg", LOAD_FILE('/ENTER_FULL_PATH/YouStudy/images/Interstellar_poster.jpg'));
+insert into movies(filename, poster) values("TheWolfofWallStreet_poster.jpg", LOAD_FILE('/ENTER_FULL_PATH/YouStudy/images/TheWolfofWallStreet_poster.jpg'));
 
 --users
 insert into users(username, password) values("andre", MD5("andre"));
