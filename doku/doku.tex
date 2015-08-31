@@ -1,0 +1,12 @@
+\documentclass[abstracton]{scrreprt}
+\usepackage{style}
+\include{tex/glossar}
+\begin{document}
+\include{tex/deckblatt}
+\tableofcontents
+\listoffigures
+\include{tex/inhalt}
+\glsaddall{}
+\setglossarystyle{altlist}
+%\printglossaries{}
+\end{document}
