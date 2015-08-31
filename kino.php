@@ -1,11 +1,20 @@
 <?php include "header.tpl"; ?>
-    <script type="text/javascript">
-        $(function () {
-            var tmp = new imageGalery();
-            tmp.SetImages(["images/kino1.jpg", "images/kino2.jpg", "images/kino3.jpg", "images/kino4.jpg"]);
-        });
-    </script>
-    <div id="lightbox">
+<?php
+$round = 1;
+$images = array();
+while (file_exists ("images/kino$round.jpg")) {
+    $images[] = "\"images/kino{$round}.jpg\"";
+    $round++;
+}
+        var_dump($images);
+        ?>
+        <script type="text/javascript">
+            $(function () {
+                var tmp = new imageGalery();
+                tmp.SetImages([<?php echo implode(",",$images) ?>]);
+            });
+        </script>
+        <div id="lightbox">
         <div id="lightboxupper">
             <div id="lightboxleftarrow"><i class="fa fa-arrow-circle-left"></i></div>
             <div id="lightboximagecontainer">

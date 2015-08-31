@@ -39,10 +39,6 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="box50">
-                    <span class="caption">Campus Kino</span>
-                    Demnächsts:
-                </div>
             </div>
 
         </main>

@@ -66,6 +66,12 @@ $currentpage = basename($_SERVER['PHP_SELF']);
                     <i class="fa fa-video-camera"></i>
                 </a></li>
             <?php if ($loggedin == true) { ?>
+            <li><a href="./admin.php">
+                    <span>Admin</span>
+                    <i class="fa fa-user-secret"></i>
+                </a></li>
+            <?php } ?>
+            <?php if ($loggedin == true) { ?>
             <li class="right"><a href="./logout.php">
                     <span>Logout</span>
                     <i class="fa fa-sign-out"></i>

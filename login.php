@@ -1,7 +1,7 @@
 <?php include 'header.tpl'; ?>
 <?php
 
-if (isset($_POST["username"]) && isset($_POST["password"])) {
+if (isset($_POST["login"]) && isset($_POST["username"]) && isset($_POST["password"])) {
     include('config.php');
     $verbindung = mysqli_connect(DB_ADDR,DB_USER,DB_PASS,DB_DATA)
     or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
@@ -15,23 +15,24 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     if (isset($row)) {
         if ($row[1] == $password) {
             $_SESSION["username"] = $username;
-            header("Location: index.php");
+            header("Location: admin.php");
         } else {
             echo "Benutzername und/oder Passwort falsch. <a href=\"login.html\">Login</a>";
         }
     } else {
         echo "Benutzername und/oder Passwort falsch. <a href=\"login.html\">Login</a>";
     }
-
 }
 
 ?>
 <?php if (!$loggedin) { ?>
     <form class="box100" action="login.php" method="post">
-        <span class="caption"> Username:</span>
+        <div class="caption">Jetzt Einloggen</div>
+        <input type="hidden" name="login" value="1">
+        <span class="caption noborder"> Username:</span>
         <input type="text" size="24" maxlength="50" name="username">
 
-        <span class="caption"> Passwort:</span>
+        <span class="caption noborder"> Passwort:</span>
         <input type="password" size="24" maxlength="50" name="password">
 
         <br />
@@ -39,6 +40,9 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         <br />
 
         <input type="submit" value="Login">
+
+        <hr />
+        <a class="link" href="register.php">Noch nicht angemeldet? Jetzt registrieren!</a>
     </form>
 <?php } ?>
 
