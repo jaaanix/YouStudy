@@ -1,6 +1,6 @@
 <?php
 
-$days = isset($_POST["day"]) ? $_POST["day"] : 0;
+$days = isset($_POST["day"]) ? $_POST["day"] : 7;
 $date = new DateTime("today + {$days}day");
 
 $s = curl_init();
@@ -34,7 +34,7 @@ $htmlreplace = preg_replace($htmlregex," ",$response);
 #$subendreplace ="/<\/sup>/";
 #$htmlreplace = preg_replace($subreplace,"[sup]",$htmlreplace);
 #$htmlreplace = preg_replace($subendreplace,"[supend]",$htmlreplace);
-$htmlreplace = str_replace(["\n","\r","   ","  "], "", $htmlreplace);
+$htmlreplace = str_replace(["\n","\r","   ","  "], " ", $htmlreplace);
 
 $titlesregex = "/<tr><td class='pk[^>]+>([^<]+)/";
 $titles = preg_match_all($titlesregex,$htmlreplace,$matches);
@@ -55,6 +55,16 @@ $preisregex = "/<td class='cell3 '>([^<]*)/";
 $preis = preg_match_all($preisregex, $htmlreplace, $matches);
 if ($preis)
     $rtn->preise = $matches[1];
+for ($i = 0; $i < sizeof($rtn->preise); $i++) {
+    $einzelpreise = explode("/",$rtn->preise[$i]) ;
+    if (sizeof($einzelpreise) == 1) {
+        $rtn->preise[$i] = "&nbsp;";
+        continue;
+    }
+    for ($j = 0; $j < sizeof($einzelpreise); $j++)
+        $einzelpreise[$j] = "<li>" . trim($einzelpreise[$j])  . "</li>";
+        $rtn->preise[$i] = "<ul>" . implode("\n",$einzelpreise) . "</ul>";
+}
 
 //die($htmlreplace);
 die(json_encode($rtn));

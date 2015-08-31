@@ -18,8 +18,8 @@
         <span class="caption">Parkplatzsituation</span>
         Freie Parkplätze: 23
         <div id="light">
-            <span class="active" id="red"></span>
-            <span id="orange"></span>
+            <span id="red"></span>
+            <span class="active" id="orange"></span>
             <span id="green"></span>
         </div>
     </div>

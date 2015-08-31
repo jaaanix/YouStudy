@@ -27,14 +27,16 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 
 ?>
 <?php if (!$loggedin) { ?>
-    <form action="login.php" method="post">
-        Username:<br>
-        <input type="text" size="24" maxlength="50"
-               name="username"><br><br>
+    <form class="box100" action="login.php" method="post">
+        <span class="caption"> Username:</span>
+        <input type="text" size="24" maxlength="50" name="username">
 
-        Passwort:<br>
-        <input type="password" size="24" maxlength="50"
-               name="password"><br>
+        <span class="caption"> Passwort:</span>
+        <input type="password" size="24" maxlength="50" name="password">
+
+        <br />
+        <br />
+        <br />
 
         <input type="submit" value="Login">
     </form>
