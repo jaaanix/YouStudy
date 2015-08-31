@@ -14,21 +14,15 @@
                 </ul>
                 <img src="cat.gif">
             </div>
-            <div class="box50">
-                <span class="caption">Parkplatzsituation</span>
-                <span class="text">
-                    <span class="col">
-                        <span class="leftcol">Status Hauptparkplatz: Wenige freie Plätze.</span>
-                        <span class="rightcol"> <i class="red fa fa-dot-circle-o"></i></span>
-                    </span>
-
-                    <br />
-                    <span class="col">
-                        <span class="leftcol">Status Ausweichparkplatz: Genug freie Plätze.</span>
-                        <span class="rightcol"> <i class="green fa fa-dot-circle-o"></i></span>
-                    </span>
-                </span>
-            </div>
+                <div class="box50">
+        <span class="caption">Parkplatzsituation</span>
+        Freie Parkplätze: 23
+        <div id="light">
+            <span class="active" id="red"></span>
+            <span id="orange"></span>
+            <span id="green"></span>
+        </div>
+    </div>
         </div>
 
         <div class="row">
@@ -41,7 +35,7 @@
             </div>
             <div class="box50">
                 <span class="caption">Campus Kino</span>
-
+                    Demnächsts:
             </div>
         </div>
 
