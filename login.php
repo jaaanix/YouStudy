@@ -1,4 +1,5 @@
 <?php 
+header("Content-Type: text/html; charset=utf-8");
 session_start(); 
 ?> 
 
@@ -11,8 +12,8 @@ $username = $_POST["username"];
 $password = md5($_POST["password"]); 
 
 $abfrage = "SELECT username, password FROM users WHERE username LIKE '$username' LIMIT 1"; 
-$ergebnis = mysql_query($abfrage); 
-$row = mysql_fetch_object($ergebnis); 
+$ergebnis = mysqli_query($verbindung, $abfrage); 
+$row = mysqli_fetch_object($ergebnis); 
 
 if($row->password == $password) 
     { 
