@@ -33,10 +33,12 @@ nav ul li a {
 	display: table-cell;
 	vertical-align: middle;
 	height: 50px;
-	padding: 0 15px;
+	padding: 0 5px;
 	color: #FFFFFF;
 	font-size: 1.2em;
 }
+
+
 nav ul li a:hover { background: #0996d6; }
 nav a .logo {
 	float: left;
@@ -57,20 +59,68 @@ footer {
 	width: 100%;
 }
 
+nav .container { padding: 0;}
 .container {
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 15px;
 	padding-right: 15px;
+	position: relative;
+}
+
+#mobilenavigation {
+	display: none;
 }
 
 @media (min-width: 768px) {
 	.container {
 		width: 750px;
 	}
+	nav ul li.right {
+		position: absolute;
+		right: 0;
+	}
 }
 @media (min-width: 1024px) {
 	.container {
 		width: 1000px;
+	}
+}
+@media (max-width: 767px) {
+	#mobilenavigation {
+		display: table;
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 50px;
+		width: 50px;
+		font-size: 2.2em;
+		color: #FFFFFF;
+		cursor: pointer;
+	}
+	#mobilenavigation:hover {
+		background: #0996d6;
+	}
+	#mobilenavigation i {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+	nav ul {
+		position: absolute;
+		top: 50px;
+		left: 0;
+		width: 100%;
+		display: none;
+		z-index: 2;
+	}
+	nav ul.visible { display: block; }
+	nav ul li {
+		display: block;
+		background: #29b6f6;
+	}
+	nav ul li a {
+		display: block;
+		padding: 15px 10px;
 	}
 }

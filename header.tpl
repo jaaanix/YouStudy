@@ -27,6 +27,9 @@ $loggedin = isset($_SESSION['username']);
 	<!-- Responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,userscalable=no"/>
 
+	<!-- Page Script -->
+	<script src="./scripts/youstudy.js"></script>
+
 	<!-- Slideshow -->
 	<link type="text/css" rel="stylesheet" href="./css/slideshow.css" />
 	<script src="./scripts/slideshow.js"></script>
@@ -36,6 +39,7 @@ $loggedin = isset($_SESSION['username']);
 	<nav role="navigation">
 		<div class="container">
 			<a href="./index.php"><div class="logo"></div></a>
+			<div id="mobilenavigation"><i class="fa fa-bars"></i></div>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="./parkplatz.php">
 					<span>Parkplatz</span>
@@ -50,19 +54,16 @@ $loggedin = isset($_SESSION['username']);
 					<i class="fa fa-video-camera"></i>
 				</a></li>
 				<?php if ($loggedin == true) { ?>
-				<li><a href="./logout.php">
+				<li class="right"><a href="./logout.php">
 					<span>Logout</span>
 					<i class="fa fa-sign-out"></i>
 				</a></li>
 				<?php } else { ?>
-				<li><a href="./login.php">
+				<li class="right"><a href="./login.php">
 					<span>Login</span>
 					<i class="fa fa-sign-out"></i>
 				</a></li>
 				<?php } ?>
-			</ul>
-			<ul id="nav-mobile" class="side-nav" style="left: -250px;">
-				<li><a href="#"><i class="large mdi-navigation-apps"></i></a></li>
 			</ul>
 			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 		</div>
